@@ -12,7 +12,7 @@ class Servox < Formula
   end
 
   def install
-    bin.install "servo"
+    bin.install "servox"
   end
 
   def caveats
@@ -27,7 +27,7 @@ class Servox < Formula
 
       Quick test:
         curl -O https://raw.githubusercontent.com/pannous/servox/main/test-all.html
-        servo test-all.html
+        servox test-all.html
 
       Links:
         Source: https://github.com/pannous/servox
@@ -36,6 +36,6 @@ class Servox < Formula
   end
 
   test do
-    system "#{bin}/servo", "--version"
+    system "#{bin}/servox", "--version"
   end
 end
