@@ -2,17 +2,21 @@ class Servo < Formula
   desc "Servo browser engine with WASM GC and TypeScript support"
   homepage "https://github.com/pannous/servo"
   license "MPL-2.0"
-  version "2025.12.12"
+  version "2025.12.12b"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pannous/servo/releases/download/v2025.12.12/servo-2025.12.12-darwin-arm64.tar.gz"
-      sha256 "ea6817ebdce956f06ba50b7ab397550e875300eccb3d118b8053f99fef2dbe21"
+      url "https://github.com/pannous/servo/releases/download/v2025.12.12b/servo-2025.12.12b-darwin-arm64.tar.gz"
+      sha256 "67c385c662bcf54ec571065f92693c7968cf5fd07b5ead7a16e0eb6935fc5e4d"
     end
   end
 
   def install
     bin.install "servo"
+    # Install GStreamer libraries
+    if (buildpath/"lib").exist?
+      lib.install Dir["lib/*"]
+    end
   end
 
   def caveats
