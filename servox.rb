@@ -1,6 +1,6 @@
 class Servox < Formula
-  desc "Servo browser with WASM GC and TypeScript support"
-  homepage "https://github.com/pannous/servo"
+  desc "Servox browser with WASM GC and TypeScript support"
+  homepage "https://github.com/pannous/servox"
   license "MPL-2.0"
   version "2025.12.13"
 
@@ -17,7 +17,7 @@ class Servox < Formula
 
   def caveats
     <<~EOS
-      🎉 Servo with WASM GC and TypeScript support!
+      🎉 Servox with WASM GC and TypeScript support!
 
       Features:
         • <script type="text/wast"> - WebAssembly Text format
@@ -26,12 +26,12 @@ class Servox < Formula
         • Direct property access: box.val, box[0]
 
       Quick test:
-        curl -O https://raw.githubusercontent.com/pannous/servo/main/test-all.html
+        curl -O https://raw.githubusercontent.com/pannous/servox/main/test-all.html
         servo test-all.html
 
       Links:
-        Source: https://github.com/pannous/servo
-        Tests:  https://github.com/pannous/servo/tree/main/test-*.html
+        Source: https://github.com/pannous/servox
+        Tests:  https://github.com/pannous/servox/tree/main/test-*.html
     EOS
   end
 
