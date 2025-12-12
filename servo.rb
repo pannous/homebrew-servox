@@ -7,7 +7,7 @@ class Servo < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/pannous/servo/releases/download/v2025.12.12/servo-2025.12.12-darwin-arm64.tar.gz"
-      sha256 "9222bd2a6b1de450ec123d7484205ef65ee708336c7cb4226d9149262b7c0d19"
+      sha256 "ea6817ebdce956f06ba50b7ab397550e875300eccb3d118b8053f99fef2dbe21"
     end
   end
 
@@ -29,7 +29,9 @@ class Servo < Formula
         curl -O https://raw.githubusercontent.com/pannous/servo/main/test-all.html
         servo test-all.html
 
-      Source: https://github.com/pannous/servo
+      Links:
+        Source: https://github.com/pannous/servo
+        Tests:  https://github.com/pannous/servo/tree/main/test-*.html
     EOS
   end
 
