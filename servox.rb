@@ -1,5 +1,5 @@
-class Servo < Formula
-  desc "Servo browser engine with WASM GC and TypeScript support"
+class Servox < Formula
+  desc "Servo browser with WASM GC and TypeScript support"
   homepage "https://github.com/pannous/servo"
   license "MPL-2.0"
   version "2025.12.13"
