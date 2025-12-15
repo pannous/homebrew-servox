@@ -2,17 +2,19 @@ class Servox < Formula
   desc "Servox browser with WASM GC and TypeScript support"
   homepage "https://github.com/pannous/servox"
   license "MPL-2.0"
-  version "2025.12.13"
+  version "2025.12.15"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pannous/servo/releases/download/v2025.12.13/servo-2025.12.13-darwin-arm64.tar.gz"
-      sha256 "4f38c61a301d169d15a5e6ec8b29db9969ad650403b4fb546d3a435cf48bea06"
+      url "https://github.com/pannous/servox/releases/download/v2025.12.15/servox-2025.12.15-darwin-arm64.tar.gz"
+      sha256 "ab225bb222ceb4f1f5f1cdcdb8439eba0ae9ea786fac50aa20bf909793752ce3"
     end
   end
 
   def install
     bin.install "servox"
+    (share/"servox").install "resources" if File.exist?("resources")
+    (bin/"lib").install Dir["lib/*"] if File.exist?("lib")
   end
 
   def caveats
@@ -26,16 +28,16 @@ class Servox < Formula
         • Direct property access: box.val, box[0]
 
       Quick test:
-        servox https://pannous.github.io/servox/test-all.html
+        servox https://raw.githack.com/pannous/servox/main/test-all.html
 
       Links:
-        Live Demo: https://pannous.github.io/servox/test-all.html
+        Live Demo: https://raw.githack.com/pannous/servox/main/test-all.html
         Source: https://github.com/pannous/servox
         Tests:  https://github.com/pannous/servox/tree/main/test-*.html
     EOS
   end
 
   test do
-    system "#{bin}/servox", "--version"
+    system "#{bin}/servo", "--version"
   end
 end
